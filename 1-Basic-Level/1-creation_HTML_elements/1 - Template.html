@@ -6,42 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Erick Bragança">
     <title>Template Elements</title>
+    <style>
+        .parent {
+            background-color: cornsilk;
+            border: 1px solid black;
+            min-height: 300px;
+            min-width: 300px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .parent div {
+            border: 1px solid rgb(200, 200, 200);
+            height: 100px;
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .Disable{
+            background-color: dimgrey;
+        }
+        .Enable{
+            background-color: chartreuse;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
-        <!--The template will be rendered here-->
+        <h1>Elemento Pai</h1>
+        <button id="add">Add Child</button>
+        <div id="pai" class="parent">
+            <!--The childs will be rendered here-->
+        </div>
     </div>
-    <script>
-        //Exercício
-        //Criação de multiplos elementos HTML
-        const app = document.getElementById('app')
-
-        //Template of HTML elements
-        const htmlElements = `
-            <h1 class="title">List 1</h1>
-            <h2>List of tasks</h2>
-            <ul class="list">
-                <li>Make Order</li>
-                <li>Create a functionality</li>
-                <li>Create an explanation</li>      
-            </ul>
-        `
-        //Convert template string in HTML DocumentFragment
-        function createHTMLElement(elements){
-            const template = document.createElement("template")
-            template.innerHTML = elements.trim()
-            return template.content
-
-            /*
-            To return HTML Collection:
-            return template.content.children
-            */
-        }
-
-        //Insert HTML elements into app
-        const elements = createHTMLElement(htmlElements)
-        console.log(elements);
-        app.append(elements)
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
