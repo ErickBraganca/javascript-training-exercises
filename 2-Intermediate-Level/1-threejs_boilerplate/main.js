@@ -1,6 +1,7 @@
 /*------------------------------------------------------------
 Criar um boilerplate com os principais conceitos e componentes
-da biblioteca THREE.js
+da biblioteca THREE.js.
+Está sendo utilizado um loader para arquivos FBX.
 -------------------------------------------------------------*/
 import * as THREE from 'three'//Three.js core
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'//Camera Control
