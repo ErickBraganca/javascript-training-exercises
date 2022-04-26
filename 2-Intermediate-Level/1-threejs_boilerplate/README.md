@@ -1,4 +1,4 @@
-<h1 align = "justify">🚦 Three.js Boiler Plate</h1>
+<h1 align = "justify">🚦 Three.js Boilerplate</h1>
 
 ## 📜📢 Motivation
 <span style="margin-botton: 5px">
