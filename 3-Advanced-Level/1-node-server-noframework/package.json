@@ -1,0 +1,17 @@
+{
+  "name": "node-server-noframework",
+  "version": "1.0.0",
+  "description": "Node.js command line interface application",
+  "main": "index.js",
+  "scripts": {
+    "start":"node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "Node",
+    "CLI",
+    "File System"
+  ],
+  "author": "Erick Bragança",
+  "license": "MIT"
+}
