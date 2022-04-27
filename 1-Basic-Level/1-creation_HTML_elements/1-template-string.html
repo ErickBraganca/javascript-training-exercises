@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Erick Bragança">
+    <title>Template Elements</title>
+</head>
+<body>
+    <div id="app">
+        <button id="add">Add Child</button>
+        <input id="info" type="text">
+        <div id="parent" class="parent">
+            <!--The elements will be rendered here-->
+        </div>
+    </div>
+    <script>
+        /*-------------------------------------------------
+        Usar template String para criação de elementos HTML
+        --------------------------------------------------*/
+
+        const parent = document.getElementById('parent')
+        const add = document.getElementById('add')
+
+        function renderElementIntoDOM(info) {
+            const currentDate = new Date()
+            //Template String of HTML Elements
+            const htmlElements =
+                `
+                <div>
+                    <h2>Info: ${info}</h2>
+                    <span>${currentDate}</span>
+                </div>
+            `
+            //Insert HTML Element in DOM
+            const elements = createHTMLElement(htmlElements)
+            parent.appendChild(elements)
+        }
+
+        //Convert template string in HTML DocumentFragment
+        function createHTMLElement(elements) {
+            const template = document.createElement("template")
+            template.innerHTML = elements.trim()
+            return template.content
+        }
+
+        add.addEventListener("click", function () {
+            const inputText = document.getElementById('info').value
+            if (inputText) {
+                renderElementIntoDOM(inputText)
+            }else{
+                alert("Preencha o Campo")
+            }
+        })
+    </script>
+</body>
+</html>
