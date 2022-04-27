@@ -3,6 +3,7 @@
 
 ## 🏅 Index of Projects
 <ol>
-    <li>Creation of HTML Elements</li>
+    <li>Creation of HTML Elements.</li>
+    <li>Study of ways to iterate arrays.</li>
 </ol>
 
