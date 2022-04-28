@@ -1,16 +1,34 @@
 /*--------------------------------
-Explorar a estrutura de parseamento
-map para manipular o array
+Explorar o map na iteração em arrays
+retornando as operações  de uma
+lista de entradas e saídas
 ---------------------------------*/
 
-const materials = [
-    { Name: 'Carbon Steel', Code: 'AC', YoungModule: 190 },
-    { Name: 'Stainless Steel', Code: 'AI', YoungModule: 350 },
-    { Name: 'Suplex Steel', Code: 'AD', YoungModule: 125 },
-    { Name: 'Cast Iron', Code: 'CI', YoungModule: 25 },
+const transactions = [
+    { name: 'NoteBook', id: 0001, value: -4300 },
+    { name: 'Keyboard', id: 0002, value: -350 },
+    { name: 'Salary', id: 0003, value: 8500 },
+    { name: 'Monitor', id: 0004, value: -350 },
+    { name: 'Freelancer', id: 0005, value: 850 },
+    { name: 'Desk', id: 0006, value: -1300 },
 ]
 
-const modulusConverting = value => (value.YoungModule * 1000)
-const modulusConverted = materials.map(modulusConverting)
+//Return a new array with only value property
+const amount = transactions.map(transaction => transaction.value)
 
-console.log(modulusConverted)
+//Take expenses and payments
+const expenses = []
+const payments = []
+amount.forEach(transaction => {
+    if (transaction < 0) {
+        expenses.push(transaction)
+    } else {
+        payments.push(transaction)
+    }
+})
+
+console.log("=====Expenses=====")
+console.table(expenses);
+
+console.log("=====Payments=====")
+console.table(payments);
