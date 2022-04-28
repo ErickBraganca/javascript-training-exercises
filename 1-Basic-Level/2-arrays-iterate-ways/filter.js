@@ -18,8 +18,8 @@ const expensesFilter = transaction => transaction.amount < 0
 const revenueFilter =  transaction => transaction.amount > 0
 
 //Performing expenses and revenue filter
-const expenses = transactions.filter(expensesOperations)
-const revenue = transactions.filter()
+const expenses = transactions.filter(expensesFilter)
+const revenue = transactions.filter(revenueFilter)
 
 console.log("=====Expenses=====")
 console.table(expenses)
