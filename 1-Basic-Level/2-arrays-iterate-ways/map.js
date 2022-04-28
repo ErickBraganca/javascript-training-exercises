@@ -1,8 +1,8 @@
-/*--------------------------------
-Explorar o map na iteração em arrays
-retornando as operações  de uma
-lista de entradas e saídas
----------------------------------*/
+/*---------------------------------------------
+Explorar o map na iteração em arrays retornando
+do array transactions duas novas listas contendo
+as receitas e despesas.
+----------------------------------------------*/
 
 const transactions = [
     { name: 'NoteBook', id: 0001, amount: -4300 },
@@ -18,12 +18,12 @@ const amounts = transactions.map(transaction => transaction.amount)
 
 //Take expenses and payments
 const expenses = []
-const payments = []
+const revenue = []
 amounts.forEach(transaction => {
     if (transaction < 0) {
         expenses.push(transaction)//Pushing element < 0 into expenses variable
     } else {
-        payments.push(transaction)//Pushing element = or > 0 into payments variable
+        revenue.push(transaction)//Pushing element = or > 0 into payments variable
     }
 })
 
@@ -31,4 +31,4 @@ console.log("=====Expenses=====")
 console.table(expenses)
 
 console.log("=====Payments=====")
-console.table(payments)
+console.table(revenue)

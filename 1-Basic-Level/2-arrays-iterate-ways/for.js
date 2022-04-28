@@ -1,7 +1,7 @@
-/*--------------------------------
-Explorar a estrutura de repetição
-for-loop no parseamento de arrays
----------------------------------*/
+/*---------------------------------------------
+Explorar a estrutura de repetição for no
+parseamento de arrays
+---------------------------------------------*/
 
 const materials = [
     { Name: 'Carbon Steel', Code: 'AC' },

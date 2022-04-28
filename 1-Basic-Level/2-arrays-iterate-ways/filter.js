@@ -1,8 +1,8 @@
-/*--------------------------------------
+/*---------------------------------------------
 Explorar o filter na iteração de arrays
-retornando do array transactions as
-despesas e receitas. 
----------------------------------------*/
+retornando do array transactions duas novas
+listas contendo as receitas e despesas.
+----------------------------------------------*/
 
 const transactions = [
     { name: 'NoteBook', id: 0001, amount: -4300 },

@@ -1,8 +1,8 @@
-/*--------------------------------------
-Explorar o reduce na iteração de arrays
-retornando do array transactions o total
-de despesas e receitas. 
----------------------------------------*/
+/*---------------------------------------------
+Explorar o reduce na iteração de arrays 
+retornando do array transactions o total de
+despesas e receitas. 
+----------------------------------------------*/
 
 const transactions = [
     { name: 'NoteBook', id: 0001, amount: -4300 },
@@ -24,6 +24,7 @@ const revenueFilter = transaction => transaction > 0
 const expenses = amounts.filter(expensesFilter)
 const revenue = amounts.filter(revenueFilter)
 
+//Summing all items in each array
 const totalExpenses = Math.abs(expenses.reduce((accumulator, value) => accumulator + value, 0)).toFixed(2)
 const totalRevenue = revenue.reduce((accumulator, value) => accumulator + value, 0).toFixed(2)
 const balance = (totalRevenue - totalExpenses).toFixed(2)
