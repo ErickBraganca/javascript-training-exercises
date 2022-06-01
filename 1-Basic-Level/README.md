@@ -5,5 +5,6 @@
 <ol>
     <li>Creation of HTML Elements.</li>
     <li>Study of ways to iterate arrays.</li>
+    <li>Implementation of common math formulas.</li>
 </ol>
 
