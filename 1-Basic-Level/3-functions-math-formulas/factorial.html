@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatorial</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+        }
+        .main-view {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input-area {
+            margin-bottom: 5px;
+        }
+
+        .outside-border {
+            min-height: 500px;
+            width: 600px;
+            padding: 15px;
+            background-color: #754e27;
+            border: 3px solid #3a220c;
+            border-radius: 25px;
+        }
+
+        .green-board {
+            background-color: #026939;
+            border: 3px solid #3a220c;
+            height: 100%;
+            color: #f2fff9;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .input-area input{
+            border: 2px solid #3a220c;
+            background-color: #754e27;
+            padding: 5px;
+            border-radius: 5px;
+            outline: none;
+            color: white;
+            text-align: center;
+        }
+
+        .input-area input::placeholder{
+            color: white;
+        }
+
+        .input-area button {
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .input-area button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-view">
+        <div class="input-area">
+            <input class="input-value" id="text" type="text" placeholder="Números 0 e 160:">
+            <button class="buttons" id="calc" type="button">Calcular</button>
+            <button class="buttons" id="clean" type="button">Limpar</button>
+        </div>
+        <div class="outside-border">
+            <div class="green-board" id="board">
+                Principio Matemático:
+                <br>
+                O fatorial de um número inteiro e positivo
+                [ n ], representado por [ n! ] é obtido a
+                partir da multiplicação de todos os seus
+                antecessores até o número um.
+                <br>
+                <br>
+                Equação: n! = n . (n – 1)
+            </div>
+        </div>
+    </div>
+    <script>
+        /*--------------------------------------
+        Criar uma função que retorne o fatorial
+        de um número passado por parâmetro.
+
+        Principio Matemático: 
+        O fatorial de um número inteiro e positivo
+        [ n ], representado por  [ n! ] é obtido a
+        partir da multiplicação de todos os seus
+        antecessores até o número um.
+
+        Equação: n! = n . (n – 1)
+        ---------------------------------------*/
+        const inputValue = document.getElementById("text");
+        const btnCalculate = document.getElementById("calc");
+        const btnClean = document.getElementById("clean");
+        const writableArea = document.getElementById("board")
+        let index = [];
+        const factorial = (n) => {
+            if (n === 1) {
+                index.push(1);
+                return 1
+            } else {
+                index.push(n);
+                return n * factorial(n - 1); //Recursive Call
+            }
+        };
+
+        const renderInteraction = (data, result) => {
+            const string = data.join(" x ");
+            const template = `<span>${index[0]}! = ${string} <strong>= ${result}</strong></span>`
+            writableArea.innerHTML = template
+        };
+
+        btnCalculate.addEventListener("click", function () {
+            index = [];
+            const value = Number(inputValue.value);
+            if (value === 0 || value > 160) {
+                writableArea.innerHTML = "Insira algum valor no campo!!"
+            } else {
+                const result = factorial(value);
+                renderInteraction(index, result);
+            }     
+        });
+
+        btnClean.addEventListener("click", function () {
+            inputValue.value = ""
+            writableArea.innerHTML = ""
+        })
+    </script>
+</body>
+
+</html>
