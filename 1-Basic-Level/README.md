@@ -24,5 +24,10 @@
             <li>Factorial</li>
         </ul>
     </li>
+    <li>Manipulation of Arrays and Objects.
+        <ul>
+            <li>Comparison between two arrays and differences check.</li>
+        </ul>
+    </li>
 </ol>
 
