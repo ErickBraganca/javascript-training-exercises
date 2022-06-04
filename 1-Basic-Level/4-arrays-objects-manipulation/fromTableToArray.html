@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            font-size: 1.2rem;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            font-family: "Inter", sans-serif;
+            margin-top: 1rem;
+        }
+        table th {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+        table th,
+        table td {
+            padding: 12px 15px;
+        }
+    </style>
+</head>
+<body>
+    <table class="table-content" id="table">
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+        </tr>
+        <tr>
+            <td>Shell Petroleo e Energia</td>
+            <td>Jhon Francis</td>
+            <td>Brazil</td>
+        </tr>
+        <tr>
+            <td>Equinor Petroleo e Energia</td>
+            <td>Robert Almeida</td>
+            <td>Brazil</td>
+        </tr>
+    </table>
+    <script>
+        /*---------------------------------------------------------
+        Converter uma tabela HTML em um Array de Objetos.
+        Cada linha da tabela corresponderá à um objeto com
+        propriedades e valores gerados dinamicamente.
+        As propriedades (chaves) corresponderão ao header da tabela. 
+        -----------------------------------------------------------*/
+        const tableContent = document.getElementById("table");
+        const tableData = Array.from(tableContent.rows); //Convert HTMLCollection of table rows to an Array
+        let tableHeader = [];
+        let tableArray = [];
+
+        function createTableArray(values) {
+            let tableObject = {};
+            //
+            values.forEach((key, index) => {
+                tableObject[tableHeader[index]] = key;  //Generate the object's key (property) and value in a computed way
+            })
+            tableArray.push(tableObject);  //Populate the converted table array with generated objects
+        }
+
+        tableData.forEach((key, index) => {
+            const tableRows = Array.from(key.children); //Convert HTMLCollection of each tr to an Array
+            const dataRows = tableRows.map(node => node.innerText); //Take the content of each td and th
+            if (index === 0) {
+                console.log("Header", dataRows);
+                tableHeader = dataRows;
+            } else {
+                console.log("Data", dataRows);
+                createTableArray(dataRows);
+            }
+        })
+        console.log("Tabela Convertida", tableArray);
+    </script>
+</body>
+</html>
