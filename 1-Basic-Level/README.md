@@ -27,6 +27,7 @@
     <li>Manipulation of Arrays and Objects.
         <ul>
             <li>Comparison between two arrays and differences check.</li>
+            <li>Converting a HTML table to an array of objects.</li>
         </ul>
     </li>
 </ol>
