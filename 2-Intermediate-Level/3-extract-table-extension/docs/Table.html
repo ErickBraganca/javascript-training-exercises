@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            font-size: 1.2rem;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            font-family: "Inter", sans-serif;
+            margin-top: 1rem;
+        }
+
+        table th {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        table th,
+        table td {
+            padding: 12px 15px;
+        }
+    </style>
+</head>
+<body>
+    <table class="table-content" id="table">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>BTC</td>
+                <td>Bitcoin</td>
+                <td>R$29.923,8</td>
+            </tr>
+            <tr>
+                <td>ETH</td>
+                <td>Ethereum</td>
+                <td>R$1.806,63</td>
+            </tr>
+            <tr>
+                <td>ADA</td>
+                <td>Cardano</td>
+                <td>R$0,5689</td>
+            </tr>
+            <tr>
+                <td>SOL</td>
+                <td>Solana</td>
+                <td>R$38,691</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

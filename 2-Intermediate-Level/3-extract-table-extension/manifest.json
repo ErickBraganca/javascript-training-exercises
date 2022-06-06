@@ -1,0 +1,34 @@
+{
+    "name": "Extract Table",
+    "description": "Convert HTML Table!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_title":"Table Extract",
+        "default_icon":"/interface/icon.png",
+        "default_popup":"/interface/popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "/interface/icons/crawler_icon16.png",
+        "32": "/interface/icons/crawler_icon32.png",
+        "48": "/interface/icons/crawler_icon48.png",
+        "96": "/interface/icons/crawler_icon96.png",
+        "128": "/interface/icons/crawler_icon128.png"
+    }
+}
