@@ -4,13 +4,15 @@
     box-sizing: border-box;
 }
 .main-view {
-    width: 350px;
+    width: 250px;
     background-color: #ecf0f1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
     padding: 10px;
+    font-size: 1rem;
+    font-family: "Inter", sans-serif;
 }
 
 .coin-board{
@@ -24,4 +26,12 @@
     justify-content: space-between;
     margin: 10px;
     padding: 10px;
+}
+
+.coin-board a {
+    background-color: chartreuse;
+    padding: 0.5rem;
+    text-decoration: none;
+    border-radius: 0.15rem;
+    font-weight: 600;
 }

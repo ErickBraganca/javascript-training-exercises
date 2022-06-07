@@ -3,7 +3,7 @@
 ## 📢 Warning
 <span>
 This is not a project, it's just a study of the features needed to create an extension that interacts with a web page.
-In the document folder there is an html table to test the concept.
+In the document folder there is an HTML table to test the concept.
 </span>
 
 ## 📜 Motivation
@@ -53,4 +53,3 @@ In the document folder there is an html table to test the concept.
 ├───📄 background.j             🔸  Service worker, responsible to monitor the events.
 ├───📄 content.js               🔸  Content script, run in the context of web pages.
 └───📄 manifest.json            🔸  Extension start, contain the main informations.
-
