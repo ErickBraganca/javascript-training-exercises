@@ -6,13 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Table</title>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            margin-top: 1rem;
+        }
+
+        div{
+            width: fit-content;
+            height: fit-content;
+            margin: 0 auto;
+        }
+
         table {
             border-collapse: collapse;
             font-size: 1.2rem;
             border-radius: 5px 5px 0 0;
             overflow: hidden;
-            font-family: "Inter", sans-serif;
-            margin-top: 1rem;
         }
 
         table th {
@@ -25,60 +36,60 @@
         table th,
         table td {
             padding: 12px 15px;
+            border: 1px solid #009879;
         }
     </style>
 </head>
 <body>
-    <table class="table-content" id="table">
-        <thead>
-            <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>BTC</td>
-                <td>Bitcoin</td>
-            </tr>
-            <tr>
-                <td>ETH</td>
-                <td>Ethereum</td>
-            </tr>
-            <tr>
-                <td>ADA</td>
-                <td>Cardano</td>
-            </tr>
-            <tr>
-                <td>SOL</td>
-                <td>Solana</td>
-            </tr>
-            <tr>
-                <td>SOL</td>
-                <td>Solana</td>
-            </tr>
-            <tr>
-                <td>USDT</td>
-                <td>Tether</td>
-            </tr>
-            <tr>
-                <td>DOGE</td>
-                <td>Dogecoin</td>
-            </tr>
-            <tr>
-                <td>SHIB</td>
-                <td>SHIBA INU</td>
-            </tr>
-            <tr>
-                <td>BCH</td>
-                <td>Bitcoin Cash</td>
-            </tr>
-            <tr>
-                <td>XMR</td>
-                <td>Monero</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="main-container">
+        <h2>Tabela de Teste</h2>
+        <span>Lista de Criptomoedas</span>
+        <table class="table-content" id="table">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>BTC</td>
+                    <td>Bitcoin</td>
+                </tr>
+                <tr>
+                    <td>ETH</td>
+                    <td>Ethereum</td>
+                </tr>
+                <tr>
+                    <td>ADA</td>
+                    <td>Cardano</td>
+                </tr>
+                <tr>
+                    <td>SOL</td>
+                    <td>Solana</td>
+                </tr>
+                <tr>
+                    <td>USDT</td>
+                    <td>Tether</td>
+                </tr>
+                <tr>
+                    <td>DOGE</td>
+                    <td>Dogecoin</td>
+                </tr>
+                <tr>
+                    <td>SHIB</td>
+                    <td>SHIBA INU</td>
+                </tr>
+                <tr>
+                    <td>BCH</td>
+                    <td>Bitcoin Cash</td>
+                </tr>
+                <tr>
+                    <td>XMR</td>
+                    <td>Monero</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
