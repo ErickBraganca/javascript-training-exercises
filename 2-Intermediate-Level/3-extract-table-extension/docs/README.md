@@ -44,7 +44,7 @@ In the document folder there is an html table to test the concept.
 │    └───📄 Table.html          🔸  Test HTML Table.  
 │       
 ├───📁interface   
-│    ├───📁images              ✔️  UI Element, icons of extension.   
+│    ├───📁 icons               ✔️  UI Element, icons of extension.   
 │    └───📄 icon.png            🔸  UI Element, it is the default icon of the popup interface. 
 │    └───📄 popup.css           🔸  UI Element, contain stylization of the popup interface.   
 │    └───📄 popup.html          🔸  UI Element, main HTML structure of the popup interface. 
