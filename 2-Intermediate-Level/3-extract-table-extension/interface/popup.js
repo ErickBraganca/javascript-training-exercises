@@ -2,7 +2,8 @@
 
 const app = document.getElementById("app")
 
-const setDOMInfo = (data) => {
+//Render each object inside the array received from content.js into HTML Elements
+const renderDOMItems = (data) => {
   data.forEach((key) => {
     const board = document.createElement("div")
     board.setAttribute("class", "coin-board")
@@ -23,6 +24,7 @@ const setDOMInfo = (data) => {
   })
 }
 
+//When the popup is loaded, a message is sent content script a message to start the table parsing.
 window.addEventListener('DOMContentLoaded', () => {
   chrome.tabs.query({
     active: true,
@@ -31,7 +33,8 @@ window.addEventListener('DOMContentLoaded', () => {
     chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', subject: 'extract' },
       function (response) {
         if (!window.chrome.runtime.lastError) {
-          setDOMInfo(response)
+          //This Call Back function, is executed with the response return of the content script 
+          renderDOMItems(response)
         }
       })
   })
