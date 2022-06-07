@@ -39,7 +39,7 @@ In the document folder there is an html table to test the concept.
 │
 ├───📁docs                      ✔️ Exercise documentation.
 │    └───📄 README.md           🔸  Exercise Overview. 
-│    └───📄 Architecture.png    🔸  Architecture Overview.   
+│    └───📄 Architecture.png    🔸  Extension Architecture.   
 │    └───📄 Preview.png         🔸  Extension Image Preview.
 │    └───📄 Table.html          🔸  Test HTML Table.  
 │       
