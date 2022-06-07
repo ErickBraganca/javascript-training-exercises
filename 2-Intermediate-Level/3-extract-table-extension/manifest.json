@@ -1,6 +1,6 @@
 {
     "name": "Extract Table",
-    "description": "Convert HTML Table!",
+    "description": "Convert HTML table into an array of objects!",
     "version": "1.0",
     "manifest_version": 3,
     "action": {
@@ -12,7 +12,8 @@
         "service_worker": "background.js"
     },
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "webNavigation"
     ],
     "content_scripts": [
         {

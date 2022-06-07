@@ -6,14 +6,19 @@ const setDOMInfo = (data) => {
   data.forEach((key) => {
     const board = document.createElement("div")
     board.setAttribute("class", "coin-board")
-    const code = document.createElement("span")
-    code.innerText = `Código: ${key.Code}`
-    const name = document.createElement("span")
-    name.innerText = `Nome: ${key.Name}`
-    const price = document.createElement("span")
-    price.innerText = `Preço: ${key.Price}`
 
-    board.append(code, name, price)
+    const code = document.createElement("h3")
+    code.innerText = key.Code
+
+    const name = document.createElement("span")
+    name.innerText = key.Name
+
+    const link = document.createElement("a")
+    link.setAttribute("href", `https://www.binance.com/pt-BR/trade/${key.Code}_BUSD`)
+    link.setAttribute("target", 'target="_blank"')
+    link.innerText = "Acessar"
+
+    board.append(code, name, link)
     app.append(board)
   })
 }
