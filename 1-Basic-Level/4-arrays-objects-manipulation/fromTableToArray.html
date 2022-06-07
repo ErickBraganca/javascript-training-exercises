@@ -14,12 +14,14 @@
             font-family: "Inter", sans-serif;
             margin-top: 1rem;
         }
+
         table th {
             background-color: #009879;
             color: #ffffff;
             text-align: left;
             font-weight: bold;
         }
+
         table th,
         table td {
             padding: 12px 15px;
@@ -61,32 +63,44 @@
         propriedades e valores gerados dinamicamente.
         As propriedades (chaves) corresponderão ao header da tabela. 
         -----------------------------------------------------------*/
-        const tableContent = document.getElementById("table");
-        const tableData = Array.from(tableContent.rows); //Convert HTMLCollection of table rows to an Array
-        let tableHeader = [];
-        let tableArray = [];
 
-        function createTableArray(values) {
-            let tableObject = {};
-            //
-            values.forEach((key, index) => {
-                tableObject[tableHeader[index]] = key;  //Generate the object's key (property) and value in a computed way
-            })
-            tableArray.push(tableObject);  //Populate the converted table array with generated objects
-        }
+        //Return the HTML collection of all tables in the active webpage.
+        const tableContent = document.getElementsByTagName("table")
+        //Pick the index 0 in returned HTML Collection
+        const tableData = Array.from(tableContent[0].rows)
 
-        tableData.forEach((key, index) => {
-            const tableRows = Array.from(key.children); //Convert HTMLCollection of each tr to an Array
-            const dataRows = tableRows.map(node => node.innerText); //Take the content of each td and th
-            if (index === 0) {
-                console.log("Header", dataRows);
-                tableHeader = dataRows;
-            } else {
-                console.log("Data", dataRows);
-                createTableArray(dataRows);
+        //Convert of HTMLcollection into arrays and these arrays into arrays of objects.
+        const extractTable = (callback) => {
+            let tableHeader = []
+            let tableArray = []
+
+            function init() {
+                tableData.forEach((key, index) => {
+                    const tableRows = Array.from(key.children)
+                    const textRows = tableRows.map(node => node.innerText)
+
+                    if (index === 0) {
+                        //Return only the header of the table (th).
+                        console.log("[Extract Table] - Table Head", textRows)
+                        tableHeader = textRows
+                    } else {
+                        //Return each line data of the table (td).
+                        console.log("[Extract Table] - Table Rows", textRows)
+                        constructor(textRows)
+                    }
+                })
             }
-        })
-        console.log("Tabela Convertida", tableArray);
+            function constructor(values) {
+                const newObject = { ...{} }
+                values.forEach((key, index) => {
+                    newObject[tableHeader[index]] = key
+                })
+                tableArray.push(newObject)
+            }
+            init()
+            console.log("[Extract Table] - Finshed Process", tableArray)
+        }
+        extractTable()
     </script>
 </body>
 </html>
