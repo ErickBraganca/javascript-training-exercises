@@ -24,3 +24,21 @@ These exercicies are separated into three categories:
   <img align="center" alt="Atom" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/atom/atom-original.svg" />
   <img align="center" alt="Git" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
 </div><br>
+
+## ℹ Directory Download.
+If you don't want to download the entire repository but just a directory, use the instruction below.
+
+### Clone the repositorie with -n flag.
+```sh
+$ git clone -n https://github.com/ErickBraganca/javascript-training-exercises.git
+```
+
+### Access the directory.
+```sh
+cd javascript-training-exercises
+```
+
+### Clone the specific directory.
+```sh
+$ git checkout HEAD <directory> 
+```
