@@ -5,4 +5,5 @@
 <ol>
     <li>Creation of Three.js boilerplate</li>
     <li>Use of Node Native Modules</li>
+    <li>Creation of extension to Google Chrome / Microsoft Edge</li>
 </ol>
